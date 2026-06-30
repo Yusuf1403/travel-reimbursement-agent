@@ -101,5 +101,6 @@ def sample_claim() -> dict:
 def test_client() -> TestClient:
     """Return a FastAPI test client."""
     from app.core.application import create_app
+
     app = create_app()
     return TestClient(app)

@@ -37,10 +37,7 @@ def validate_output(draft_json: str) -> str:
         logger.info("Output validation passed")
         return json.dumps({"status": "valid", "errors": []})
     except ValidationError as ve:
-        errors = [
-            {"field": ".".join(str(loc) for loc in e["loc"]), "message": e["msg"]}
-            for e in ve.errors()
-        ]
+        errors = [{"field": ".".join(str(loc) for loc in e["loc"]), "message": e["msg"]} for e in ve.errors()]
         logger.warning("Output validation failed: %d errors", len(errors))
         return json.dumps({"status": "invalid", "errors": errors})
     except json.JSONDecodeError as je:

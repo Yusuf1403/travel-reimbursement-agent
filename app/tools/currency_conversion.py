@@ -61,24 +61,28 @@ def currency_conversion(conversion_json: str) -> str:
         to_cur = data.get("to_currency", "USD").upper()
 
         if from_cur == to_cur:
-            return json.dumps({
-                "status": "success",
-                "original_amount": amount,
-                "converted_amount": amount,
-                "from_currency": from_cur,
-                "to_currency": to_cur,
-                "exchange_rate": 1.0,
-                "conversion_date": date.today().isoformat(),
-                "source": "identity",
-            })
+            return json.dumps(
+                {
+                    "status": "success",
+                    "original_amount": amount,
+                    "converted_amount": amount,
+                    "from_currency": from_cur,
+                    "to_currency": to_cur,
+                    "exchange_rate": 1.0,
+                    "conversion_date": date.today().isoformat(),
+                    "source": "identity",
+                }
+            )
 
         rate = _get_rate(from_cur, to_cur)
         if rate is None:
-            return json.dumps({
-                "status": "error",
-                "message": f"Unsupported currency pair: {from_cur} → {to_cur}",
-                "supported_currencies": list(_STATIC_RATES.keys()),
-            })
+            return json.dumps(
+                {
+                    "status": "error",
+                    "message": f"Unsupported currency pair: {from_cur} → {to_cur}",
+                    "supported_currencies": list(_STATIC_RATES.keys()),
+                }
+            )
 
         converted = round(amount * rate, 2)
         result = {

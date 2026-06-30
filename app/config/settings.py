@@ -62,9 +62,7 @@ class Settings(BaseSettings):
     rag_chunk_size: int = Field(default_factory=lambda: int(_read_ini("rag", "chunk_size", "512")))
     rag_chunk_overlap: int = Field(default_factory=lambda: int(_read_ini("rag", "chunk_overlap", "64")))
     rag_top_k: int = Field(default_factory=lambda: int(_read_ini("rag", "top_k", "5")))
-    embedding_model: str = Field(
-        default_factory=lambda: _read_ini("rag", "embedding_model", "text-embedding-3-small")
-    )
+    embedding_model: str = Field(default_factory=lambda: _read_ini("rag", "embedding_model", "text-embedding-3-small"))
     policies_dir: str = Field(default_factory=lambda: _read_ini("rag", "policies_dir", "data/policies"))
     faiss_index_dir: str = Field(default_factory=lambda: _read_ini("rag", "faiss_index_dir", "data/faiss_index"))
 
@@ -102,9 +100,7 @@ class Settings(BaseSettings):
     international_flight_business: float = Field(
         default_factory=lambda: float(_read_ini("expense_limits", "international_flight_business", "8000"))
     )
-    taxi_per_day: float = Field(
-        default_factory=lambda: float(_read_ini("expense_limits", "taxi_per_day", "100"))
-    )
+    taxi_per_day: float = Field(default_factory=lambda: float(_read_ini("expense_limits", "taxi_per_day", "100")))
     incidentals_per_day: float = Field(
         default_factory=lambda: float(_read_ini("expense_limits", "incidentals_per_day", "50"))
     )

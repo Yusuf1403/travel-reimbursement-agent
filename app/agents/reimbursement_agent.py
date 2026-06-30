@@ -83,7 +83,9 @@ class ReimbursementAgent:
             claim_json=claim_json,
         )
 
-        logger.info("Evaluating claim %s (amount=%.2f %s)", claim.claim_id, claim.total_claimed_amount, claim.claim_currency)
+        logger.info(
+            "Evaluating claim %s (amount=%.2f %s)", claim.claim_id, claim.total_claimed_amount, claim.claim_currency
+        )
 
         # --- Invoke agent ---
         result = await self._executor.ainvoke({"input": human_message})
@@ -96,11 +98,13 @@ class ReimbursementAgent:
     @staticmethod
     def _build_prompt() -> ChatPromptTemplate:
         """Construct the agent prompt template."""
-        return ChatPromptTemplate.from_messages([
-            ("system", SYSTEM_PROMPT),
-            ("human", "{input}"),
-            MessagesPlaceholder(variable_name="agent_scratchpad"),
-        ])
+        return ChatPromptTemplate.from_messages(
+            [
+                ("system", SYSTEM_PROMPT),
+                ("human", "{input}"),
+                MessagesPlaceholder(variable_name="agent_scratchpad"),
+            ]
+        )
 
     @staticmethod
     def _retrieve_policy_context(claim: ReimbursementClaim) -> str:
@@ -139,13 +143,15 @@ class ReimbursementAgent:
         for idx, (action, observation) in enumerate(intermediate_steps):
             tool_name = getattr(action, "tool", "unknown")
             tools_used.append(tool_name)
-            audit_trail.append({
-                "step": idx + 1,
-                "tool": tool_name,
-                "input_summary": str(getattr(action, "tool_input", ""))[:200],
-                "output_summary": str(observation)[:200],
-                "timestamp": datetime.utcnow().isoformat(),
-            })
+            audit_trail.append(
+                {
+                    "step": idx + 1,
+                    "tool": tool_name,
+                    "input_summary": str(getattr(action, "tool_input", ""))[:200],
+                    "output_summary": str(observation)[:200],
+                    "timestamp": datetime.utcnow().isoformat(),
+                }
+            )
 
         # Try to parse JSON from the output
         try:

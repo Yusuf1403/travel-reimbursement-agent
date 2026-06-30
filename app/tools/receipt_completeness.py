@@ -48,34 +48,42 @@ def receipt_completeness_check(expenses_json: str) -> str:
             if rid and rid in receipt_map:
                 receipt = receipt_map[rid]
                 if receipt.get("is_attached", False):
-                    matched.append({
-                        "expense_type": exp.get("expense_type"),
-                        "amount": amount,
-                        "receipt_id": rid,
-                        "status": "matched",
-                    })
+                    matched.append(
+                        {
+                            "expense_type": exp.get("expense_type"),
+                            "amount": amount,
+                            "receipt_id": rid,
+                            "status": "matched",
+                        }
+                    )
                 else:
-                    missing.append({
+                    missing.append(
+                        {
+                            "expense_type": exp.get("expense_type"),
+                            "amount": amount,
+                            "receipt_id": rid,
+                            "reason": "Receipt referenced but not attached",
+                        }
+                    )
+            elif amount > RECEIPT_REQUIRED_THRESHOLD:
+                missing.append(
+                    {
                         "expense_type": exp.get("expense_type"),
                         "amount": amount,
                         "receipt_id": rid,
-                        "reason": "Receipt referenced but not attached",
-                    })
-            elif amount > RECEIPT_REQUIRED_THRESHOLD:
-                missing.append({
-                    "expense_type": exp.get("expense_type"),
-                    "amount": amount,
-                    "receipt_id": rid,
-                    "reason": f"No receipt for expense above ${RECEIPT_REQUIRED_THRESHOLD}",
-                })
+                        "reason": f"No receipt for expense above ${RECEIPT_REQUIRED_THRESHOLD}",
+                    }
+                )
             else:
                 # Small expense — receipt not strictly required
-                matched.append({
-                    "expense_type": exp.get("expense_type"),
-                    "amount": amount,
-                    "receipt_id": rid,
-                    "status": "below_threshold",
-                })
+                matched.append(
+                    {
+                        "expense_type": exp.get("expense_type"),
+                        "amount": amount,
+                        "receipt_id": rid,
+                        "status": "below_threshold",
+                    }
+                )
 
         result = {
             "status": "success",

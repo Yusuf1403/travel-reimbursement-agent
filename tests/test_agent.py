@@ -36,17 +36,19 @@ class TestAgentParsing:
         from app.agents.reimbursement_agent import ReimbursementAgent
 
         claim = ReimbursementClaim(**sample_claim)
-        valid_output = json.dumps({
-            "claim_id": claim.claim_id,
-            "decision": "approved",
-            "approved_amount": 900.0,
-            "rejected_amount": 0.0,
-            "confidence_score": 0.95,
-            "reasoning": "All expenses within limits",
-            "deductions": [],
-            "policy_references": ["Section 4"],
-            "missing_documents": [],
-        })
+        valid_output = json.dumps(
+            {
+                "claim_id": claim.claim_id,
+                "decision": "approved",
+                "approved_amount": 900.0,
+                "rejected_amount": 0.0,
+                "confidence_score": 0.95,
+                "reasoning": "All expenses within limits",
+                "deductions": [],
+                "policy_references": ["Section 4"],
+                "missing_documents": [],
+            }
+        )
         result_dict = {
             "output": valid_output,
             "intermediate_steps": [
@@ -65,14 +67,16 @@ class TestAgentParsing:
         from app.agents.reimbursement_agent import ReimbursementAgent
 
         claim = ReimbursementClaim(**sample_claim)
-        json_content = json.dumps({
-            "claim_id": claim.claim_id,
-            "decision": "partially_approved",
-            "approved_amount": 700.0,
-            "rejected_amount": 200.0,
-            "confidence_score": 0.8,
-            "reasoning": "Hotel over limit",
-        })
+        json_content = json.dumps(
+            {
+                "claim_id": claim.claim_id,
+                "decision": "partially_approved",
+                "approved_amount": 700.0,
+                "rejected_amount": 200.0,
+                "confidence_score": 0.8,
+                "reasoning": "Hotel over limit",
+            }
+        )
         wrapped = f"Here is the result:\n```json\n{json_content}\n```"
         result_dict = {
             "output": wrapped,

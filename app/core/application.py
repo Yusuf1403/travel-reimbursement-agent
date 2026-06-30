@@ -64,6 +64,7 @@ def create_app() -> FastAPI:
         # Pre-load FAISS index if it exists
         try:
             from app.rag.vector_store import get_vector_store
+
             store = get_vector_store()
             store.load_index()
             logger.info("FAISS index loaded at startup")

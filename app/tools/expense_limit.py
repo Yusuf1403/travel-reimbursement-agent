@@ -25,9 +25,7 @@ def _get_limit(expense_type: str, travel_type: str) -> float | None:
     limits = {
         "hotel": settings.international_hotel_per_night if is_international else settings.domestic_hotel_per_night,
         "meals": settings.international_meals_per_day if is_international else settings.domestic_meals_per_day,
-        "flight": (
-            settings.international_flight_economy if is_international else settings.domestic_flight_economy
-        ),
+        "flight": (settings.international_flight_economy if is_international else settings.domestic_flight_economy),
         "taxi": settings.taxi_per_day,
         "incidentals": settings.incidentals_per_day,
     }
@@ -78,16 +76,18 @@ def expense_limit_check(expenses_json: str) -> str:
             total_approved += approved
             total_excess += excess
 
-            results.append({
-                "expense_type": etype,
-                "claimed_amount": amount,
-                "limit_per_unit": limit_per_unit,
-                "units": units,
-                "max_allowed": max_allowed,
-                "approved_amount": round(approved, 2),
-                "excess_amount": round(excess, 2),
-                "within_limit": within_limit,
-            })
+            results.append(
+                {
+                    "expense_type": etype,
+                    "claimed_amount": amount,
+                    "limit_per_unit": limit_per_unit,
+                    "units": units,
+                    "max_allowed": max_allowed,
+                    "approved_amount": round(approved, 2),
+                    "excess_amount": round(excess, 2),
+                    "within_limit": within_limit,
+                }
+            )
 
         output = {
             "status": "success",

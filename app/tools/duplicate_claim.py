@@ -114,13 +114,15 @@ def duplicate_claim_check(claim_json: str) -> str:
         for historical in _claim_history:
             sim = _calculate_similarity(claim, historical)
             if sim >= threshold:
-                matches.append({
-                    "matching_claim_id": historical["claim_id"],
-                    "similarity_score": sim,
-                    "status": historical.get("status", "unknown"),
-                    "amount": historical.get("total_amount"),
-                    "destination": historical.get("destination"),
-                })
+                matches.append(
+                    {
+                        "matching_claim_id": historical["claim_id"],
+                        "similarity_score": sim,
+                        "status": historical.get("status", "unknown"),
+                        "amount": historical.get("total_amount"),
+                        "destination": historical.get("destination"),
+                    }
+                )
 
         is_duplicate = len(matches) > 0
         result = {
