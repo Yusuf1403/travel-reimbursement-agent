@@ -8,7 +8,7 @@ and what they receive.  Internal domain objects live in ``app.models``.
 from __future__ import annotations
 
 from datetime import date, datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Any
 
 from pydantic import BaseModel, Field, field_validator
@@ -17,7 +17,7 @@ from pydantic import BaseModel, Field, field_validator
 # ---------------------------------------------------------------------------
 # Enums
 # ---------------------------------------------------------------------------
-class ExpenseType(str, Enum):
+class ExpenseType(StrEnum):
     HOTEL = "hotel"
     MEALS = "meals"
     FLIGHT = "flight"
@@ -28,12 +28,12 @@ class ExpenseType(str, Enum):
     OTHER = "other"
 
 
-class TravelType(str, Enum):
+class TravelType(StrEnum):
     DOMESTIC = "domestic"
     INTERNATIONAL = "international"
 
 
-class Decision(str, Enum):
+class Decision(StrEnum):
     APPROVED = "approved"
     PARTIALLY_APPROVED = "partially_approved"
     REJECTED = "rejected"

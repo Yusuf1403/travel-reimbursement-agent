@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import json
 
-import pytest
-
 
 class TestReceiptCompleteness:
     """Tests for the receipt completeness checker."""
@@ -126,7 +124,7 @@ class TestExpenseLimit:
             "travel_type": "domestic",
         }
         result = json.loads(expense_limit_check.invoke(json.dumps(data)))
-        # 3 nights × $200 = $600 max, $500 is within
+        # 3 nights x $200 = $600 max, $500 is within
         assert result["total_excess"] == 0
 
 

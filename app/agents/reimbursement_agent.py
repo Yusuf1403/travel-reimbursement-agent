@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import logging
 from datetime import datetime
+from typing import ClassVar
 
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -35,7 +36,7 @@ logger = logging.getLogger("app.agents.reimbursement_agent")
 class ReimbursementAgent:
     """Evaluates travel reimbursement claims using tool-calling LLM agent."""
 
-    TOOLS = [
+    TOOLS: ClassVar[list] = [
         policy_lookup,
         receipt_completeness_check,
         expense_limit_check,

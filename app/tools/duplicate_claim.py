@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import date, timedelta
+from datetime import date
 
 from langchain_core.tools import tool
 

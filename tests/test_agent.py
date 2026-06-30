@@ -3,11 +3,9 @@
 from __future__ import annotations
 
 import json
-from unittest.mock import AsyncMock, MagicMock, patch
+from unittest.mock import MagicMock
 
-import pytest
-
-from app.schemas import ReimbursementClaim, EvaluationResponse
+from app.schemas import EvaluationResponse, ReimbursementClaim
 
 
 class TestAgentParsing:
