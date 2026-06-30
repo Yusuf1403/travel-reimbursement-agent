@@ -1,0 +1,57 @@
+[
+  {
+    "receipt_id": "REC-101-001",
+    "vendor": "United Airlines",
+    "category": "flight",
+    "amount": 450.00,
+    "currency": "USD",
+    "date": "2025-08-10",
+    "description": "Economy round-trip SFO-JFK",
+    "payment_method": "Corporate Card",
+    "is_itemized": true
+  },
+  {
+    "receipt_id": "REC-101-002",
+    "vendor": "Marriott International",
+    "category": "hotel",
+    "amount": 540.00,
+    "currency": "USD",
+    "date": "2025-08-10",
+    "description": "Standard room 3 nights ($180/night)",
+    "payment_method": "Corporate Card",
+    "is_itemized": true
+  },
+  {
+    "receipt_id": "REC-101-003",
+    "vendor": "Various Restaurants",
+    "category": "meals",
+    "amount": 220.00,
+    "currency": "USD",
+    "date": "2025-08-10",
+    "description": "Meals over 4 days ($55/day avg)",
+    "payment_method": "Personal Card",
+    "is_itemized": true
+  },
+  {
+    "receipt_id": "REC-101-004",
+    "vendor": "NYC Yellow Cab",
+    "category": "taxi",
+    "amount": 85.00,
+    "currency": "USD",
+    "date": "2025-08-10",
+    "description": "Airport transfer and local transport",
+    "payment_method": "Cash",
+    "is_itemized": false
+  },
+  {
+    "receipt_id": "REC-102-001",
+    "vendor": "British Airways",
+    "category": "flight",
+    "amount": 4200.00,
+    "currency": "USD",
+    "date": "2025-09-01",
+    "description": "Economy round-trip LAX-LHR",
+    "payment_method": "Corporate Card",
+    "is_itemized": true
+  }
+]

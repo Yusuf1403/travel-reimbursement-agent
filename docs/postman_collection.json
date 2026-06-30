@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Travel Reimbursement Agent API",
+    "description": "API collection for the Travel Reimbursement Approval Agent",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/health"
+          }
+        },
+        {
+          "name": "Version",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/version"
+          }
+        },
+        {
+          "name": "Metrics",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/metrics"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Claims",
+      "item": [
+        {
+          "name": "Evaluate Claim - Approved",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/evaluate",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"claim_id\": \"CLM-2025-101\",\n  \"employee_id\": \"EMP-1001\",\n  \"employee_name\": \"Alice Johnson\",\n  \"department\": \"Engineering\",\n  \"manager_name\": \"Bob Smith\",\n  \"manager_id\": \"EMP-2001\",\n  \"travel_type\": \"domestic\",\n  \"destination\": \"New York, NY\",\n  \"business_purpose\": \"Quarterly engineering review and client demo\",\n  \"travel_start_date\": \"2025-08-10\",\n  \"travel_end_date\": \"2025-08-13\",\n  \"expenses\": [\n    {\"expense_type\": \"flight\", \"description\": \"Economy SFO-JFK\", \"amount\": 450.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"receipt_id\": \"REC-001\"},\n    {\"expense_type\": \"hotel\", \"description\": \"Marriott 3 nights\", \"amount\": 540.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"receipt_id\": \"REC-002\"},\n    {\"expense_type\": \"meals\", \"description\": \"Meals 4 days\", \"amount\": 220.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"receipt_id\": \"REC-003\"}\n  ],\n  \"receipts\": [\n    {\"receipt_id\": \"REC-001\", \"expense_type\": \"flight\", \"vendor\": \"United Airlines\", \"amount\": 450.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"is_attached\": true},\n    {\"receipt_id\": \"REC-002\", \"expense_type\": \"hotel\", \"vendor\": \"Marriott\", \"amount\": 540.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"is_attached\": true},\n    {\"receipt_id\": \"REC-003\", \"expense_type\": \"meals\", \"vendor\": \"Various\", \"amount\": 220.0, \"currency\": \"USD\", \"date\": \"2025-08-10\", \"is_attached\": true}\n  ],\n  \"total_claimed_amount\": 1210.0,\n  \"claim_currency\": \"USD\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Evaluate Claim - Rejected",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/evaluate",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"claim_id\": \"CLM-2025-103\",\n  \"employee_id\": \"EMP-1003\",\n  \"employee_name\": \"Priya Sharma\",\n  \"travel_type\": \"domestic\",\n  \"destination\": \"Miami, FL\",\n  \"business_purpose\": \"Personal vacation extended by 1 day for client lunch\",\n  \"travel_start_date\": \"2025-10-01\",\n  \"travel_end_date\": \"2025-10-07\",\n  \"expenses\": [\n    {\"expense_type\": \"flight\", \"description\": \"First-class ORD-MIA\", \"amount\": 2800.0, \"currency\": \"USD\", \"date\": \"2025-10-01\", \"receipt_id\": \"REC-001\"},\n    {\"expense_type\": \"other\", \"description\": \"Spa services\", \"amount\": 350.0, \"currency\": \"USD\", \"date\": \"2025-10-03\", \"receipt_id\": null}\n  ],\n  \"receipts\": [\n    {\"receipt_id\": \"REC-001\", \"expense_type\": \"flight\", \"vendor\": \"American Airlines\", \"amount\": 2800.0, \"currency\": \"USD\", \"date\": \"2025-10-01\", \"is_attached\": true}\n  ],\n  \"total_claimed_amount\": 3150.0,\n  \"claim_currency\": \"USD\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Policies",
+      "item": [
+        {
+          "name": "Upload Policy Document",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/upload-policy",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "data/policies/travel_policy.md"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "claim_id": "CLM-2025-103",
+  "employee_id": "EMP-1003",
+  "employee_name": "Priya Sharma",
+  "department": "Marketing",
+  "manager_name": "James Wilson",
+  "manager_id": "EMP-2003",
+  "travel_type": "domestic",
+  "destination": "Miami, FL",
+  "business_purpose": "Personal vacation — extended by 1 day for a client lunch",
+  "travel_start_date": "2025-10-01",
+  "travel_end_date": "2025-10-07",
+  "expenses": [
+    {
+      "expense_type": "flight",
+      "description": "First-class round-trip ORD → MIA",
+      "amount": 2800.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "receipt_id": "REC-103-001"
+    },
+    {
+      "expense_type": "hotel",
+      "description": "The Ritz-Carlton South Beach - 6 nights luxury suite",
+      "amount": 4200.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "receipt_id": "REC-103-002"
+    },
+    {
+      "expense_type": "meals",
+      "description": "Fine dining including alcohol",
+      "amount": 950.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "receipt_id": null
+    },
+    {
+      "expense_type": "taxi",
+      "description": "Limousine service",
+      "amount": 600.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "receipt_id": null
+    },
+    {
+      "expense_type": "other",
+      "description": "Spa and wellness services",
+      "amount": 350.00,
+      "currency": "USD",
+      "date": "2025-10-03",
+      "receipt_id": null
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "REC-103-001",
+      "expense_type": "flight",
+      "vendor": "American Airlines",
+      "amount": 2800.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "attachment_url": "receipts/rec-103-001.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-103-002",
+      "expense_type": "hotel",
+      "vendor": "The Ritz-Carlton",
+      "amount": 4200.00,
+      "currency": "USD",
+      "date": "2025-10-01",
+      "attachment_url": "receipts/rec-103-002.pdf",
+      "is_attached": true
+    }
+  ],
+  "total_claimed_amount": 8900.00,
+  "claim_currency": "USD",
+  "submission_date": "2025-10-15"
+}

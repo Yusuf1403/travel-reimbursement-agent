@@ -1,0 +1,110 @@
+{
+  "claim_id": "CLM-2025-102",
+  "employee_id": "EMP-1002",
+  "employee_name": "Carlos Rivera",
+  "department": "Sales",
+  "manager_name": "Diana Chen",
+  "manager_id": "EMP-2002",
+  "travel_type": "international",
+  "destination": "London, UK",
+  "business_purpose": "International sales conference and partner meetings",
+  "travel_start_date": "2025-09-01",
+  "travel_end_date": "2025-09-05",
+  "expenses": [
+    {
+      "expense_type": "flight",
+      "description": "Round-trip economy flight LAX → LHR",
+      "amount": 4200.00,
+      "currency": "USD",
+      "date": "2025-09-01",
+      "receipt_id": "REC-102-001"
+    },
+    {
+      "expense_type": "hotel",
+      "description": "Hilton London Bankside - 4 nights",
+      "amount": 1800.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "receipt_id": "REC-102-002"
+    },
+    {
+      "expense_type": "meals",
+      "description": "Meals during 5-day international trip",
+      "amount": 380.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "receipt_id": "REC-102-003"
+    },
+    {
+      "expense_type": "taxi",
+      "description": "Heathrow to hotel and local transport",
+      "amount": 250.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "receipt_id": "REC-102-004"
+    },
+    {
+      "expense_type": "conference",
+      "description": "Sales Summit 2025 registration",
+      "amount": 1500.00,
+      "currency": "USD",
+      "date": "2025-09-02",
+      "receipt_id": "REC-102-005"
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "REC-102-001",
+      "expense_type": "flight",
+      "vendor": "British Airways",
+      "amount": 4200.00,
+      "currency": "USD",
+      "date": "2025-09-01",
+      "attachment_url": "receipts/rec-102-001.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-102-002",
+      "expense_type": "hotel",
+      "vendor": "Hilton Hotels",
+      "amount": 1800.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "attachment_url": "receipts/rec-102-002.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-102-003",
+      "expense_type": "meals",
+      "vendor": "Various London Restaurants",
+      "amount": 380.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "attachment_url": "receipts/rec-102-003.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-102-004",
+      "expense_type": "taxi",
+      "vendor": "Addison Lee",
+      "amount": 250.00,
+      "currency": "GBP",
+      "date": "2025-09-01",
+      "attachment_url": "receipts/rec-102-004.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-102-005",
+      "expense_type": "conference",
+      "vendor": "Sales Summit Corp",
+      "amount": 1500.00,
+      "currency": "USD",
+      "date": "2025-09-02",
+      "attachment_url": "receipts/rec-102-005.pdf",
+      "is_attached": true
+    }
+  ],
+  "total_claimed_amount": 8130.00,
+  "claim_currency": "USD",
+  "submission_date": "2025-09-12"
+}

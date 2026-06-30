@@ -1,0 +1,71 @@
+{
+  "claim_id": "CLM-2025-103",
+  "decision": "rejected",
+  "approved_amount": 0.00,
+  "rejected_amount": 8900.00,
+  "deductions": [
+    {
+      "expense_type": "flight",
+      "claimed_amount": 2800.00,
+      "approved_amount": 0.00,
+      "deducted_amount": 2800.00,
+      "reason": "First-class airfare is not reimbursable per Section 4 and Section 13"
+    },
+    {
+      "expense_type": "hotel",
+      "claimed_amount": 4200.00,
+      "approved_amount": 0.00,
+      "deducted_amount": 4200.00,
+      "reason": "Luxury suite at The Ritz-Carlton is not reimbursable without VP pre-approval (Section 5, 13)"
+    },
+    {
+      "expense_type": "meals",
+      "claimed_amount": 950.00,
+      "approved_amount": 0.00,
+      "deducted_amount": 950.00,
+      "reason": "No receipt provided; description includes alcohol which is non-reimbursable (Section 6, 10, 13)"
+    },
+    {
+      "expense_type": "taxi",
+      "claimed_amount": 600.00,
+      "approved_amount": 0.00,
+      "deducted_amount": 600.00,
+      "reason": "Limousine service is not standard transportation; no receipt provided (Section 7, 10)"
+    },
+    {
+      "expense_type": "other",
+      "claimed_amount": 350.00,
+      "approved_amount": 0.00,
+      "deducted_amount": 350.00,
+      "reason": "Spa and wellness services are explicitly non-reimbursable (Section 13)"
+    }
+  ],
+  "confidence_score": 0.92,
+  "policy_references": [
+    "Section 4: First class is not reimbursable",
+    "Section 5: Luxury suites require VP pre-approval",
+    "Section 6: Alcohol is not reimbursable",
+    "Section 10: Expenses above $25 require receipts",
+    "Section 13: Non-reimbursable expenses list"
+  ],
+  "missing_documents": [
+    "Receipt for meals ($950)",
+    "Receipt for taxi/limousine ($600)",
+    "Receipt for spa services ($350)"
+  ],
+  "reasoning": "This claim contains multiple policy violations. The primary trip purpose appears to be personal vacation with minimal business justification. First-class airfare, luxury hotel suite, alcohol, limousine service, and spa services are all explicitly non-reimbursable. Additionally, 3 of 5 expenses lack receipts. The claim is rejected in full.",
+  "tools_used": [
+    "policy_lookup",
+    "receipt_completeness_check",
+    "expense_limit_check",
+    "approval_matrix_check",
+    "validate_output"
+  ],
+  "audit_trail": [
+    {"step": 1, "tool": "policy_lookup", "input_summary": "non-reimbursable expenses, first class, luxury", "output_summary": "Policy sections 4, 5, 6, 13 retrieved"},
+    {"step": 2, "tool": "receipt_completeness_check", "input_summary": "5 expenses, 2 receipts", "output_summary": "3 receipts missing"},
+    {"step": 3, "tool": "expense_limit_check", "input_summary": "5 domestic expenses", "output_summary": "Multiple limits exceeded"},
+    {"step": 4, "tool": "approval_matrix_check", "input_summary": "$8,900 total", "output_summary": "Director approval required"},
+    {"step": 5, "tool": "validate_output", "input_summary": "Draft response", "output_summary": "Schema valid"}
+  ]
+}

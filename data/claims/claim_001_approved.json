@@ -1,0 +1,92 @@
+{
+  "claim_id": "CLM-2025-101",
+  "employee_id": "EMP-1001",
+  "employee_name": "Alice Johnson",
+  "department": "Engineering",
+  "manager_name": "Bob Smith",
+  "manager_id": "EMP-2001",
+  "travel_type": "domestic",
+  "destination": "New York, NY",
+  "business_purpose": "Quarterly engineering review and client demo at NYC office",
+  "travel_start_date": "2025-08-10",
+  "travel_end_date": "2025-08-13",
+  "expenses": [
+    {
+      "expense_type": "flight",
+      "description": "Round-trip economy flight SFO → JFK",
+      "amount": 450.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "receipt_id": "REC-101-001"
+    },
+    {
+      "expense_type": "hotel",
+      "description": "Marriott Midtown - 3 nights",
+      "amount": 540.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "receipt_id": "REC-101-002"
+    },
+    {
+      "expense_type": "meals",
+      "description": "Meals during 4-day trip",
+      "amount": 220.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "receipt_id": "REC-101-003"
+    },
+    {
+      "expense_type": "taxi",
+      "description": "Airport taxi and local transport",
+      "amount": 85.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "receipt_id": "REC-101-004"
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "REC-101-001",
+      "expense_type": "flight",
+      "vendor": "United Airlines",
+      "amount": 450.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "attachment_url": "receipts/rec-101-001.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-101-002",
+      "expense_type": "hotel",
+      "vendor": "Marriott International",
+      "amount": 540.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "attachment_url": "receipts/rec-101-002.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-101-003",
+      "expense_type": "meals",
+      "vendor": "Various Restaurants",
+      "amount": 220.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "attachment_url": "receipts/rec-101-003.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-101-004",
+      "expense_type": "taxi",
+      "vendor": "NYC Yellow Cab",
+      "amount": 85.00,
+      "currency": "USD",
+      "date": "2025-08-10",
+      "attachment_url": "receipts/rec-101-004.pdf",
+      "is_attached": true
+    }
+  ],
+  "total_claimed_amount": 1295.00,
+  "claim_currency": "USD",
+  "submission_date": "2025-08-20"
+}

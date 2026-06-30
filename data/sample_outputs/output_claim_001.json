@@ -1,0 +1,32 @@
+{
+  "claim_id": "CLM-2025-101",
+  "decision": "approved",
+  "approved_amount": 1295.00,
+  "rejected_amount": 0.00,
+  "deductions": [],
+  "confidence_score": 0.95,
+  "policy_references": [
+    "Section 4: Domestic flight economy limit $1,500",
+    "Section 5: Domestic hotel limit $200/night",
+    "Section 6: Domestic meals limit $75/day",
+    "Section 7: Taxi limit $100/day"
+  ],
+  "missing_documents": [],
+  "reasoning": "All expenses are within policy limits. Flight ($450) is well under the $1,500 domestic limit. Hotel ($540 for 3 nights = $180/night) is within the $200/night limit. Meals ($220 for 4 days = $55/day) are within the $75/day limit. Taxi ($85) is within the $100/day limit. All receipts are attached and accounted for.",
+  "tools_used": [
+    "policy_lookup",
+    "receipt_completeness_check",
+    "expense_limit_check",
+    "duplicate_claim_check",
+    "approval_matrix_check",
+    "validate_output"
+  ],
+  "audit_trail": [
+    {"step": 1, "tool": "policy_lookup", "input_summary": "domestic travel reimbursement policy", "output_summary": "Retrieved 5 policy chunks"},
+    {"step": 2, "tool": "receipt_completeness_check", "input_summary": "4 expenses, 4 receipts", "output_summary": "All 4 receipts matched"},
+    {"step": 3, "tool": "expense_limit_check", "input_summary": "4 domestic expenses", "output_summary": "All within limits"},
+    {"step": 4, "tool": "duplicate_claim_check", "input_summary": "EMP-1001, Aug 10-13", "output_summary": "No duplicates found"},
+    {"step": 5, "tool": "approval_matrix_check", "input_summary": "$1,295 total", "output_summary": "Manager approval required"},
+    {"step": 6, "tool": "validate_output", "input_summary": "Draft response", "output_summary": "Schema valid"}
+  ]
+}

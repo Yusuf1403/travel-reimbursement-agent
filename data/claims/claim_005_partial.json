@@ -1,0 +1,110 @@
+{
+  "claim_id": "CLM-2025-105",
+  "employee_id": "EMP-1005",
+  "employee_name": "Emma Thompson",
+  "department": "Finance",
+  "manager_name": "Robert Chen",
+  "manager_id": "EMP-2005",
+  "travel_type": "domestic",
+  "destination": "Chicago, IL",
+  "business_purpose": "Annual finance team offsite and budget planning",
+  "travel_start_date": "2025-08-18",
+  "travel_end_date": "2025-08-20",
+  "expenses": [
+    {
+      "expense_type": "flight",
+      "description": "Round-trip economy BOS → ORD",
+      "amount": 320.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "receipt_id": "REC-105-001"
+    },
+    {
+      "expense_type": "hotel",
+      "description": "Hyatt Regency Chicago - 2 nights",
+      "amount": 380.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "receipt_id": "REC-105-002"
+    },
+    {
+      "expense_type": "meals",
+      "description": "Meals during 3-day trip",
+      "amount": 145.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "receipt_id": "REC-105-003"
+    },
+    {
+      "expense_type": "taxi",
+      "description": "Uber from O'Hare and local transport",
+      "amount": 65.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "receipt_id": "REC-105-004"
+    },
+    {
+      "expense_type": "incidentals",
+      "description": "Wi-Fi and phone charges",
+      "amount": 30.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "receipt_id": "REC-105-005"
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "REC-105-001",
+      "expense_type": "flight",
+      "vendor": "Southwest Airlines",
+      "amount": 320.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "attachment_url": "receipts/rec-105-001.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-105-002",
+      "expense_type": "hotel",
+      "vendor": "Hyatt Hotels",
+      "amount": 380.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "attachment_url": "receipts/rec-105-002.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-105-003",
+      "expense_type": "meals",
+      "vendor": "Various Chicago Restaurants",
+      "amount": 145.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "attachment_url": "receipts/rec-105-003.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-105-004",
+      "expense_type": "taxi",
+      "vendor": "Uber",
+      "amount": 65.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "attachment_url": "receipts/rec-105-004.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-105-005",
+      "expense_type": "incidentals",
+      "vendor": "Hotel Business Center",
+      "amount": 30.00,
+      "currency": "USD",
+      "date": "2025-08-18",
+      "attachment_url": "receipts/rec-105-005.pdf",
+      "is_attached": true
+    }
+  ],
+  "total_claimed_amount": 940.00,
+  "claim_currency": "USD",
+  "submission_date": "2025-08-25"
+}

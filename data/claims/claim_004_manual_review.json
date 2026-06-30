@@ -1,0 +1,92 @@
+{
+  "claim_id": "CLM-2025-104",
+  "employee_id": "EMP-1004",
+  "employee_name": "Marcus Lee",
+  "department": "Product",
+  "manager_name": "Sarah Kim",
+  "manager_id": "EMP-2004",
+  "travel_type": "international",
+  "destination": "Tokyo, Japan",
+  "business_purpose": "Urgent client escalation — emergency travel, policy exception requested",
+  "travel_start_date": "2025-11-01",
+  "travel_end_date": "2025-11-04",
+  "expenses": [
+    {
+      "expense_type": "flight",
+      "description": "Last-minute business class SFO → NRT (emergency booking)",
+      "amount": 7500.00,
+      "currency": "USD",
+      "date": "2025-11-01",
+      "receipt_id": "REC-104-001"
+    },
+    {
+      "expense_type": "hotel",
+      "description": "Hotel Metropolitan Tokyo - 3 nights",
+      "amount": 120000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "receipt_id": "REC-104-002"
+    },
+    {
+      "expense_type": "meals",
+      "description": "Client dinners and working meals",
+      "amount": 45000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "receipt_id": "REC-104-003"
+    },
+    {
+      "expense_type": "taxi",
+      "description": "Narita airport to hotel and client site",
+      "amount": 28000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "receipt_id": "REC-104-004"
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "REC-104-001",
+      "expense_type": "flight",
+      "vendor": "ANA Airlines",
+      "amount": 7500.00,
+      "currency": "USD",
+      "date": "2025-11-01",
+      "attachment_url": "receipts/rec-104-001.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-104-002",
+      "expense_type": "hotel",
+      "vendor": "Hotel Metropolitan Tokyo",
+      "amount": 120000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "attachment_url": "receipts/rec-104-002.pdf",
+      "is_attached": true
+    },
+    {
+      "receipt_id": "REC-104-003",
+      "expense_type": "meals",
+      "vendor": "Various Tokyo Restaurants",
+      "amount": 45000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "attachment_url": null,
+      "is_attached": false
+    },
+    {
+      "receipt_id": "REC-104-004",
+      "expense_type": "taxi",
+      "vendor": "Japan Taxi",
+      "amount": 28000,
+      "currency": "JPY",
+      "date": "2025-11-01",
+      "attachment_url": "receipts/rec-104-004.pdf",
+      "is_attached": true
+    }
+  ],
+  "total_claimed_amount": 8794.00,
+  "claim_currency": "USD",
+  "submission_date": "2025-11-08"
+}

@@ -1,0 +1,38 @@
+{
+  "claim_id": "CLM-2025-104",
+  "decision": "manual_review",
+  "approved_amount": 0.00,
+  "rejected_amount": 0.00,
+  "deductions": [],
+  "confidence_score": 0.45,
+  "policy_references": [
+    "Section 4: Business class requires director pre-approval",
+    "Section 16: Policy exceptions require VP written approval",
+    "Section 10: Receipts required for expenses above $25",
+    "Section 12: Foreign currency conversion rules"
+  ],
+  "missing_documents": [
+    "Attached receipt for meals (¥45,000) — referenced but not attached",
+    "Policy exception approval documentation",
+    "Director pre-approval for business class flight"
+  ],
+  "reasoning": "This claim involves multiple complexities requiring human review: (1) Emergency travel with policy exception request — VP approval documentation not provided. (2) Business class flight ($7,500) exceeds economy limit but may be justified for emergency travel. (3) Expenses in JPY require currency conversion. (4) Meal receipt is referenced but not attached. (5) The total claim amount requires director-level approval. Given the emergency nature and policy exception request, this should be reviewed by a human approver.",
+  "tools_used": [
+    "policy_lookup",
+    "receipt_completeness_check",
+    "expense_limit_check",
+    "currency_conversion",
+    "duplicate_claim_check",
+    "approval_matrix_check",
+    "validate_output"
+  ],
+  "audit_trail": [
+    {"step": 1, "tool": "policy_lookup", "input_summary": "emergency travel, policy exception, business class", "output_summary": "Sections 4, 16 retrieved"},
+    {"step": 2, "tool": "receipt_completeness_check", "input_summary": "4 expenses, 4 receipts (1 not attached)", "output_summary": "1 receipt missing attachment"},
+    {"step": 3, "tool": "currency_conversion", "input_summary": "JPY amounts to USD", "output_summary": "Converted 3 JPY expenses"},
+    {"step": 4, "tool": "expense_limit_check", "input_summary": "4 international expenses", "output_summary": "Flight exceeds economy limit"},
+    {"step": 5, "tool": "duplicate_claim_check", "input_summary": "EMP-1004, Nov 1-4", "output_summary": "No duplicates found"},
+    {"step": 6, "tool": "approval_matrix_check", "input_summary": "$8,794 total", "output_summary": "Director approval required"},
+    {"step": 7, "tool": "validate_output", "input_summary": "Draft response", "output_summary": "Schema valid"}
+  ]
+}
